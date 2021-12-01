@@ -1,0 +1,31 @@
+---
+title: "Proyecto de Genes"
+author: "Tania A Benitez Mtz"
+date: "5/10/2021"
+output: word_document
+toc: yes
+lang: es-Es
+---
+
+\pagebreak
+# Análisis de los genes
+
+```{r}
+# Crear el vector de los genes
+genes <- c(3, 8, 7, 3, 6, 7, 9, 3, 8, 6, 7, 3, 3)
+genes
+```
+
+\pagebreak
+# Calcular el promedio
+```{r}
+mean(genes)
+```
+
+\pagebreak
+## Gráfico de barra
+```{r}
+plot(genes)
+```
+
+

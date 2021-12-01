@@ -6,9 +6,8 @@ x <- c(1:20)
 for(i in x){
   r = i^2
   print(r)
-  
-  prin
 }
+
 # función de CAT para concatenar texto y el valor
 # de la variable
 for(i in x){
@@ -37,7 +36,7 @@ for (i in colonias) {
 }
 
 # cuando una colonia se componga de 6 carácteres 
-# que se detanga el ciclo
+# que se detenga el ciclo
 # la función char cuenta los caracteres del
 # elemento
 for (i in colonias) {

@@ -1,0 +1,109 @@
+---
+title: "Graficas"
+subtitle: "Practica de clase"
+author: "Tania A Benitez Mtz"
+date: "21/10/2021"
+output:
+  word_document: default
+  pdf_document: default
+  toc: yes
+---
+
+\pagebreak
+# Gráficas
+
+
+```{r}
+# la función básica para realizar el gráfico de nubes de
+# puntos con la función plot debemos tener dos vectores con
+# los mismos argumentos
+
+luz_intensa <- c(20,20,20,20,21,24,44,60,90,94,110)
+tasa_crecimiento <- c(1.73,1.65,2.02,1.89,2.61,1.36,2.37,
+                      2.08,2.69,2.32,3.67)
+
+# crear la gráfica con la función plot
+plot(luz_intensa,tasa_crecimiento)
+
+```
+
+\pagebreak
+# Parámetro pch
+
+
+```{r}
+# el parámetro pch que recibe como valor un entero y
+# puede cambiar el formato de los puntos de la nube
+plot(luz_intensa,tasa_crecimiento, pch = 0) # cuadros
+plot(luz_intensa,tasa_crecimiento, pch = 1) # círculos
+plot(luz_intensa,tasa_crecimiento, pch = 2) # triángulos
+plot(luz_intensa,tasa_crecimiento, pch = 3) # cruces
+```
+
+\pagebreak
+# Parámetros de formato
+
+```{r}
+# la función col recibe como valor una cadena de
+# caracteres que puede especificar el color a utilizar
+plot(luz_intensa,tasa_crecimiento, pch = 16, col = 'blue')
+
+# los parámetros de xlab y ylab recibe un valor de
+# cadena de caracteres para la etiqueta del eje x y y
+plot(luz_intensa,tasa_crecimiento, pch = 20, col ='pink',
+     xlab = 'luz intensa', ylab = 'tasa de crecimiento')
+
+# el parámetro main recibe un valor de cadena de
+# caracteres para poner un título al gráfico
+plot(luz_intensa,tasa_crecimiento, pch = 18, col ='green',
+     xlab = 'luz intensa', ylab = 'tasa de crecimiento',
+     main = 'Crecimiento con diferente intensidad de luz',
+     ylim = c(0,5))
+```
+
+\pagebreak
+# Añadir puntos en la Gráfica
+
+```{r}
+# ya que fue creado el gráfico se pueden añadir más 
+# utilizando la función points
+plot(luz_intensa,tasa_crecimiento, pch = 18, col ='green',
+     xlab = 'luz intensa', ylab = 'tasa de crecimiento',
+     main = 'Crecimiento con diferente intensidad de luz',
+     ylim = c(0,5))
+tasa_crecimiento_f <- c(2.13,1.97,1.82,2.15,2.91,1.76,
+                        2.17,1.98,2.89,2.12,4.15)
+luz_intensa <- c(20,20,20,20,21,24,44,60,90,94,110)
+points(luz_intensa,tasa_crecimiento_f,pch=2, col='red')
+
+# agregar las leyendas al gráfico
+# se le puede indicar la posición
+legend('topright',legend = c('luz intensa', 'tasa intensa'), col = c('blue','red'),pch = 1,2)
+```
+
+\pagebreak
+# Gráfica de puntos
+
+```{r}
+# GRAFICOS DE LÍNEA
+# donde la p(puntos por defecto), I(lineas),
+# o(puntos y lineas)
+# creamos los vectores
+n <- c(1.07,1.28,2.68,6.12,9.11,9.34,10.66,11.45,12.78,
+       14.15)
+g <- c(28.31,28.25,31.63,26.07,38.90,25.88,29.84,33.18,
+       37.94,39.55)
+
+# creamos el gráfico
+# type tiene varias opciones como: l, p, b, n, h, i, c,
+# s, S
+# se llaman entre comillas
+plot(n,g,type = 'l')
+legend('bottomleft', legend = c('microorganismo', 'unicelular'),
+       col = c('blue','red'), pch = c(1,2))
+
+# Crear el gráfico con las variables n, g
+plot(n,g,type = 'overplotted',pch=1, col='blue', 
+     xlab = 'nitrogeno', ylab = 'ganancias',
+     main = 'Ganancias vs nitrogeno', ylim = c(10,60))
+```
